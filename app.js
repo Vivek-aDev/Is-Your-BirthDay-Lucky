@@ -14,7 +14,11 @@ function comapreValues(sum, luckyNumber) {
 function validateBirthDayIsLucky() {
   const dob = dateOfBirth.value;
   const sum = calculateSum(dob);
-  comapreValues(sum, luckyNumber.value);
+  if (sum && dob) {
+    comapreValues(sum, luckyNumber.value);
+  } else {
+    output.innerText = "Please Enter both field! 😒";
+  }
 }
 
 function calculateSum(dob) {
